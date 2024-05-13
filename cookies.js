@@ -23,6 +23,31 @@ function getCookie(cname) {
   }
 
   window.onload = function(){
+    var checkCookie = function() {
+
+        var lastCookie = document.cookie; // 'static' memory between function calls
+    
+        return function() {
+    
+            var currentCookie = document.cookie;
+    
+            if (currentCookie != lastCookie) {
+    
+                let username = getCookie("username");
+                if (username == "fifty five") {
+                    alert("Welcome back. New members can find our channel at https://www.youtube.com/@thefiftyfive55");
+                    console.log("hi");
+                } 
+    
+                lastCookie = currentCookie; // store latest cookie
+    
+            }
+        };
+    }();
+    
+    checkCookie();
+
+    window.setInterval(checkCookie, 100); // run every 100 ms
     let username = getCookie("username");
     if (username != "") {
         alert("Welcome again " + username);
