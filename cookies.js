@@ -23,12 +23,15 @@ function getCookie(cname) {
   }
 
   window.onload = function(){
-    setCookie("username", "fifty five", 36500);
-    // let username = getCookie("username");
-    // if (username != "") {
-    //     alert("Welcome again " + username);
-    //     console.log("hi")
-    // } else {
+    let username = getCookie("username");
+    if (username != "") {
+        alert("Welcome again " + username);
+        console.log("hi")
+    } 
+    // setCookie("username", "fifty five", 36500);
+    
+    
+    // else {
     //     username = prompt("Please enter your name:", "");
     //     if (username != "" && username != null) {
     //     setCookie("username", "test", 36500);
